@@ -1,9 +1,10 @@
-﻿using System.Net.Http;
+﻿using ReliableDownloader.Contracts.Services;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ReliableDownloader
+namespace ReliableDownloader.Logic
 {
     public class WebSystemCalls : IWebSystemCalls
     {

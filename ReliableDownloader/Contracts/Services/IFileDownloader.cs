@@ -1,7 +1,8 @@
-﻿using System;
+﻿using ReliableDownloader.Models;
+using System;
 using System.Threading.Tasks;
 
-namespace ReliableDownloader
+namespace ReliableDownloader.Contracts.Services
 {
     public interface IFileDownloader
     {
@@ -9,9 +10,10 @@ namespace ReliableDownloader
         /// <param name="contentFileUrl">The url which the file is hosted at</param>
         /// <param name="localFilePath">The local file path to save the file to</param>
         /// <param name="onProgressChanged">An action to call which prints progress</param>
+        /// <param name="totalAverageTime">Total Average Time to download a file</param>
         /// <returns>True or false, depending on if download completes and writes to file system okay</returns>
-        Task<bool> DownloadFile(string contentFileUrl, string localFilePath, Action<FileProgress> onProgressChanged);
-        
+        Task<bool> DownloadFile(string contentFileUrl, string localFilePath, Action<FileProgress> onProgressChanged, TimeSpan totalAverageTime);
+
         /// <summary>
         /// Cancels any in progress downloads
         /// </summary>
